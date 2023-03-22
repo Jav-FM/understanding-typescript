@@ -1,4 +1,4 @@
-//An ENUM is a group of pairs of values (for ex a number and a readable lable)
+//An enum is a group of pairs of values (for ex a number and a readable lable)
 
 //On this case, admin's value will be 0, read_only will be 1, and author will be 2
 enum Role {
