@@ -7,3 +7,9 @@ let myFutureFunction: Function;
 let myFutureFunctionTwo: () => number;
 // This one will allow a function with a string parameter and a return type of string
 let myFutureFunctionThree: (myParameter: string) => string;
+
+// We can also describe a callback function into a Function type
+let functionWithCallback: (
+  param1: number,
+  callback: (paramOfCallback: number) => void
+) => void;
