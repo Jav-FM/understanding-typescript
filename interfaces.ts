@@ -1,5 +1,6 @@
-//An interface describes the structure of an object.
 // INTERFACES
+//An interface describes the structure of an object.
+//Only available on TS
 //In this case is not a blueprint, is just a custom type
 //Example:
 interface Person {
