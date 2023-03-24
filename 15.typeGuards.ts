@@ -54,6 +54,7 @@ const useVehicle = (vehicle: Vehicle) => {
 
 // 4) Discriminated Unions
 //When working with object type, as an interface
+//(Its not a guard itself but it self the type guarding)
 interface Bird {
   // discriminated union:
   type: "bird";
