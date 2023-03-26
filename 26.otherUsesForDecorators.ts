@@ -12,6 +12,7 @@ function Log2(
   descriptor: PropertyDescriptor
 ) {
   console.log("Accesor decorator");
+  //Can return a new PropertyDescriptor (if you want)
 }
 
 //3) Decorator for methods, that recibes 3 arguments
@@ -21,6 +22,17 @@ function Log3(
   descriptor: PropertyDescriptor
 ) {
   console.log("Method decorator");
+  //Can return a new PropertyDescriptor (if you want) Ex:
+  const originalMethod = descriptor.value;
+  const adjDescriptor: PropertyDescriptor = {
+    configurable: true,
+    enumerable: false,
+    get() {
+      const boundFunction = originalMethod.bind(this);
+      return boundFunction;
+    },
+  };
+  return adjDescriptor;
 }
 
 //4) Decorator for a parameter

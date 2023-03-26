@@ -44,11 +44,19 @@ class Greeting {
 //Here it look for an element on DOM with the hookId as id,
 // and renders a template in it if exists
 function WithTemplate(template: string, hookId: string) {
-  return function (_: Function) {
+  return function (target: any) {
     const hookEl = document.getElementById(hookId);
     if (hookEl) {
       hookEl.innerHTML = template;
     }
+    //For class decorators, you can return a new constructor function that will
+    //replace the original want (if you want)
+    return class extends target {
+      constructor() {
+        super();
+        //The logic that I want to execute every time I instantiate the class
+      }
+    };
   };
 }
 
